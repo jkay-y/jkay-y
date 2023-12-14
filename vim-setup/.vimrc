@@ -1,18 +1,39 @@
+" necessary commands
 set nocompatible
 set noek
 set encoding=utf8
 
+" line numbers, etc
+set nowrap
+set cursorline
+set number
+set relativenumber
+
+" indentation. noexpandtab = tab used as indents, set indent line guides
+set tabstop=4
+set shiftwidth=4
+set noexpandtab
+set list lcs=tab:\•\ 
+
+" Don't re-indent pasted text (?)
+set paste
+
+
 "
 "
-"  PLUGINS
+" PLUGINS
 "
 "
 call plug#begin('~/.vim/plugged')
-
 Plug 'morhetz/gruvbox'
-Plug 'rust-lang/rust.vim'
 Plug 'ap/vim-css-color'
-Plug 'dense-analysis/ale'
+
+" lsp
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
+" autocomplete
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
 
 call plug#end()
 
@@ -20,52 +41,11 @@ syntax enable
 filetype plugin indent on
 
 " gruvbox
-let g:gruvbox_termcolors=16
+let g:gruvbox_termcolors=256
 set background=dark
 colorscheme gruvbox
 
-" rust.vim
-let g:rustfmt_autosave = 1
-let g:rustfmt_emit_files = 1
-let g:rustfmt_fail_silently = 0
+"vim-lsp
+inoremap <expr> j ((pumvisible())?("\<C-n>"):("j"))
+inoremap <expr> k ((pumvisible())?("\<C-p>"):("k"))
 
-
-"
-"
-"  INTERFACE CONFIGURATIONS
-"
-"
-
-" lines
-set nowrap
-set cursorline
-" view line number and make it relative to make life easier
-set number
-set relativenumber
-
-" indentation
-set tabstop=4
-set shiftwidth=4
-" setindentation as tabs, and set indent lines (no need for indent guides plugin)
-set noexpandtab
-set list lcs=tab:\•\ 
-
-
-"
-"
-"  QUIRKY STUFF
-"
-"
-
-" Use ctrl-[hjkl] to select the active split!
-nmap <silent> <c-k> :wincmd k<CR>
-nmap <silent> <c-j> :wincmd j<CR>
-nmap <silent> <c-h> :wincmd h<CR>
-nmap <silent> <c-l> :wincmd l<CR>
-" copy and paste
-vmap <C-c> "+yi
-vmap <C-x> "+c
-vmap <C-v> c<ESC>"+p
-imap <C-v> <ESC>"+pa
-
-set paste
