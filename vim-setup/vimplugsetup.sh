@@ -1,4 +1,5 @@
-#!/bin/bash                                                                                                                                                                                                1
+#!/bin/bash
+
 # Check if .vim/autoload already exists
 if [ ! -d "~/.vim/autoload" ]; then
     mkdir -p ~/.vim/autoload
