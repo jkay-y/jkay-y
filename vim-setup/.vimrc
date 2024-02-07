@@ -14,10 +14,7 @@ set tabstop=4
 set shiftwidth=4
 set noexpandtab
 set list lcs=tab:\•\ 
-
-" Don't re-indent pasted text (?)
-set paste
-
+set autoindent
 
 "
 "
