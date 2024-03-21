@@ -8,8 +8,9 @@
 
 ## LSP setup
 
-### Rust
+### Rust-analyzer
 
-1. `rustup default nightly`
-2. `rustup component add rust-analyzer-preview --toolchain nightly`
+1. Run `./get_rust_analyzer.sh`
+2. Attach `export PATH="~/.local/bin:$PATH"` to `~/.bashrc` 
+3. `source ~/.bashrc` in terminal.
 
