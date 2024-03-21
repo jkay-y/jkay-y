@@ -1,4 +1,4 @@
 # jkay-y
 
-- My vim setup backed up into [jkay-y/vim-setup/](./vim_setup)
+- My vim setup backed up into [vim-setup/](./vim_setup/README.md)
 
