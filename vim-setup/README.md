@@ -6,6 +6,8 @@
 4. Run `vim ~/.vimrc` and `:PlugInstall`
 5. Save and exit
 
+If you want to clean unused plugins, it'll be `:PlugClean`.
+
 ## LSP setup
 
 ### Rust-analyzer

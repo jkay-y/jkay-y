@@ -27,19 +27,11 @@ nnoremap <space> za
 "
 "
 call plug#begin('~/.vim/plugged')
-Plug 'ap/vim-css-color'
-Plug 'dense-analysis/ale'
-Plug 'rust-lang/rust.vim'
 Plug 'EdenEast/nightfox.nvim'
 call plug#end()
 
 syntax enable
 filetype plugin indent on
-
-" ale
-let g:ale_completion_enabled = 1
-let g:ale_rust_analyzer_executable = 'rust-analyzer' 
-let g:ale_linters = {'rust': ['analyzer']}
 
 " carbonfix
 set background=dark
